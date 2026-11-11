@@ -1,0 +1,4 @@
+AndroidManifest.xml
+lib/arm64-v8a/libsentry-android.so
+lib/arm64-v8a/libsentry.so
+stamp-cert-sha256

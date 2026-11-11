@@ -1,0 +1,98 @@
+{
+  "package": "com.monefy.app.lite",
+  "device": "S44LQCRCUG45HYFQ",
+  "source": "ADB installed package extraction",
+  "files": [
+    {
+      "file": "base.apk",
+      "size": 24284983,
+      "sha256": "78ff311283004cf894a0b0312c596204349949bf5a170b76d39338d4ca3759f0",
+      "topLevelEntries": {
+        "AndroidManifest.xml": 1,
+        "DebugProbesKt.bin": 1,
+        "META-INF": 73,
+        "androidannotations-api.properties": 1,
+        "assets": 4,
+        "billing.properties": 1,
+        "classes.dex": 1,
+        "classes2.dex": 1,
+        "classes3.dex": 1,
+        "classes4.dex": 1,
+        "client_analytics.proto": 1,
+        "com": 5,
+        "drive.v3.json": 1,
+        "firebase": 1,
+        "firebase-abt.properties": 1,
+        "firebase-analytics.properties": 1,
+        "firebase-annotations.properties": 1,
+        "firebase-components.properties": 1,
+        "firebase-config.properties": 1,
+        "firebase-core.properties": 1,
+        "firebase-encoders-proto.properties": 1,
+        "firebase-encoders.properties": 1,
+        "firebase-installations-interop.properties": 1,
+        "firebase-measurement-connector.properties": 1,
+        "google": 10,
+        "google-http-client.properties": 1,
+        "kotlin": 8,
+        "okhttp3": 2,
+        "org": 492,
+        "play-services-ads-identifier.properties": 1,
+        "play-services-auth-api-phone.properties": 1,
+        "play-services-auth-base.properties": 1,
+        "play-services-auth-blockstore.properties": 1,
+        "play-services-auth.properties": 1,
+        "play-services-base.properties": 1,
+        "play-services-basement.properties": 1,
+        "play-services-fido.properties": 1,
+        "play-services-location.properties": 1,
+        "play-services-measurement-api.properties": 1,
+        "play-services-measurement-base.properties": 1,
+        "play-services-measurement-impl.properties": 1,
+        "play-services-measurement-sdk-api.properties": 1,
+        "play-services-measurement-sdk.properties": 1,
+        "play-services-measurement.properties": 1,
+        "play-services-places-placereport.properties": 1,
+        "play-services-stats.properties": 1,
+        "play-services-tasks.properties": 1,
+        "protolite-well-known-types.properties": 1,
+        "res": 948,
+        "resources.arsc": 1,
+        "transport-api.properties": 1,
+        "stamp-cert-sha256": 1
+      }
+    },
+    {
+      "file": "split_config.arm64_v8a.apk",
+      "size": 762158,
+      "sha256": "4a0d8e19194e25337accfc2df0072c17a948b82d74b6c93bb572790fdbdab055",
+      "topLevelEntries": {
+        "AndroidManifest.xml": 1,
+        "lib": 2,
+        "stamp-cert-sha256": 1
+      }
+    },
+    {
+      "file": "split_config.xhdpi.apk",
+      "size": 834564,
+      "sha256": "165a99b141b539aed4de72de348ec0dffe78aeff090b48dc26f03ce1575deafb",
+      "topLevelEntries": {
+        "AndroidManifest.xml": 1,
+        "res": 265,
+        "resources.arsc": 1,
+        "stamp-cert-sha256": 1
+      }
+    },
+    {
+      "file": "split_config.zh.apk",
+      "size": 82130,
+      "sha256": "961d78599ba291f3769d907586196af02ceb96f6cc27a90e2ac93db3aa867e77",
+      "topLevelEntries": {
+        "AndroidManifest.xml": 1,
+        "resources.arsc": 1,
+        "stamp-cert-sha256": 1
+      }
+    }
+  ],
+  "versionFromDumpsys": "1.22.11 (2229)"
+}

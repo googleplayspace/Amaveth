@@ -1,0 +1,6 @@
+{
+  "package": "com.aaazero.yueh",
+  "launch": "Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.aaazero.yueh/.MainActivity }\nStatus: ok\nLaunchState: COLD\nActivity: com.aaazero.yueh/.ImActivity\nTotalTime: 720\nWaitTime: 777\nComplete\n",
+  "pid": "21033",
+  "focus": "mResumedActivity: ActivityRecord{657a9c2 u0 com.aaazero.yueh/.FlutterHostActivity t930}"
+}

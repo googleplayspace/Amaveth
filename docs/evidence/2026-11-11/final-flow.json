@@ -1,0 +1,11 @@
+{
+  "apkSHA256": "0cf48cc2eaae2c7597ea2fce493f9b3f6fb237d4d871f6a97f6a3d3787e1dea1",
+  "cases": {
+    "coldStart": "passed",
+    "createExpense30": "passed",
+    "editExpense31": "passed",
+    "deleteExpense": "passed",
+    "emptyState": "passed"
+  },
+  "testRecordsRemaining": 0
+}

@@ -1,0 +1,10 @@
+<resources>
+    <style name="ImSplashTheme" parent="Theme.SplashScreen">
+        <item name="android:windowBackground">@drawable/shell_start_background</item>
+        <item name="windowSplashScreenBackground">@android:color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/shell_splash_art</item>
+        <item name="android:windowSplashScreenBackground">@android:color/white</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/shell_splash_art</item>
+        <item name="postSplashScreenTheme">@style/ImShellTheme</item>
+    </style>
+</resources>

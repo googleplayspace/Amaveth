@@ -1,0 +1,25 @@
+{
+  "device": "S44LQCRCUG45HYFQ",
+  "scenario": "launcher cold start and two home/launcher reentries; placeholder endpoint falls back to A",
+  "rounds": [
+    {
+      "round": 1,
+      "flutterHostActivityCount": 1,
+      "resumed": "mResumedActivity: ActivityRecord{3d39450 u0 com.aaazero.yueh/.FlutterHostActivity t858}"
+    },
+    {
+      "round": 2,
+      "flutterHostActivityCount": 1,
+      "resumed": "mResumedActivity: ActivityRecord{3d39450 u0 com.aaazero.yueh/.FlutterHostActivity t858}"
+    },
+    {
+      "round": 3,
+      "flutterHostActivityCount": 1,
+      "resumed": "mResumedActivity: ActivityRecord{3d39450 u0 com.aaazero.yueh/.FlutterHostActivity t858}"
+    }
+  ],
+  "installedAPKMatches": true,
+  "apkSHA256": "f2f78c0477d44ba205abafeb0ef92a08f8c0695f074968de562395624bfeab49",
+  "matchedErrors": [],
+  "BWebEndToEnd": "not tested: real configuration still pending"
+}

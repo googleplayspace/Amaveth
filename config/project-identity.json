@@ -1,0 +1,10 @@
+{
+  "displayName": "Amaveth",
+  "androidApplicationId": "com.aaazero.yueh",
+  "iosBundleId": "com.aaazero.yueh.ios",
+  "nameRule": "spec 2026-11-11 \u00a713.1",
+  "allowedLetters": "abcdefhkmnpqrstvwx",
+  "trademarkClearance": "not performed",
+  "noCacheConfigFailure": "Show A after bounded retries; retry on foreground. Do not persist as HTTP 404.",
+  "publicNameScreening": "2026-11-11 public store search; no exact app match found; not trademark clearance"
+}

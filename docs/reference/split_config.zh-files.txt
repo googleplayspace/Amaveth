@@ -1,0 +1,3 @@
+AndroidManifest.xml
+resources.arsc
+stamp-cert-sha256

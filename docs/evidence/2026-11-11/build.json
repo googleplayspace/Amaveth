@@ -1,0 +1,38 @@
+{
+  "brand": "Yueh",
+  "package": "com.aaazero.yueh",
+  "version": "1.0.0+1",
+  "mode": "Release",
+  "target": "android-arm64",
+  "defines": {
+    "ENABLE_IM": false
+  },
+  "environment": "A-only review; B config placeholders, not production service configuration",
+  "apk": "/Users/ddg/chatgpt/google/project/yueh/build/app/outputs/flutter-apk/app-release.apk",
+  "bytes": 26314134,
+  "apkSHA256": "0cf48cc2eaae2c7597ea2fce493f9b3f6fb237d4d871f6a97f6a3d3787e1dea1",
+  "apkBuiltAt": "2026-11-11T15:32:33.911680+08:00",
+  "signingCertificateSHA256": "35641a7ccb7fdbbc711e1a07cfe3c3e730533d4214866592b6ad8974861d255b",
+  "sourceTreeSHA256": "ee32ae459425ba5650ae2292534007e0e5032a09992d516e1870974c9b1293f3",
+  "gitState": "new local repository, no initial commit or remote push",
+  "nativeShellSourceBaseline": {
+    "project": "cashmark",
+    "commit": "9fc426c45adeaff4dfa872ef58f58cfc147db15f",
+    "modifications": "independent project identity/channels, English UI and placeholder configuration; not a new B acceptance claim"
+  },
+  "ios": {
+    "path": "/Users/ddg/chatgpt/google/project/yueh/build/ios/iphoneos/Runner.app",
+    "built": true,
+    "codesigned": false,
+    "deviceTested": false
+  },
+  "checks": {
+    "flutterAnalyze": "passed",
+    "flutterTest": "10 passed",
+    "BEndToEnd": "not tested; configuration placeholders"
+  },
+  "toolchain": {
+    "flutter": "3.47.9",
+    "dart": "3.13.7"
+  }
+}

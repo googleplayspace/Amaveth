@@ -1,0 +1,7 @@
+Starting: Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.aaazero.yueh.startupcheck/com.aaazero.yueh.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: com.aaazero.yueh.startupcheck/com.aaazero.yueh.ImActivity
+TotalTime: 1517
+WaitTime: 1523
+Complete
