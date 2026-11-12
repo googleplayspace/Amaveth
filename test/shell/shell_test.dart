@@ -1,7 +1,7 @@
 // Baseline: DataVerna 71e141c; project imports and channel adapted.
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yueh/shell/watchdog.dart';
-import 'package:yueh/shell/shell_config.dart';
+import 'package:Amaveth/shell/watchdog.dart';
+import 'package:Amaveth/shell/shell_config.dart';
 
 void main() {
   test('entry preserves HTTPS origin and adds no default channel', () {

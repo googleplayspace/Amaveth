@@ -1,7 +1,7 @@
 // Baseline: DataVerna 71e141c; project imports and channel adapted.
 import 'dart:async';
 
-import 'package:yueh/shell/push_service.dart';
+import 'package:Amaveth/shell/push_service.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';

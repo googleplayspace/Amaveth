@@ -1,6 +1,6 @@
 // Baseline: DataVerna 71e141c; project imports and channel adapted.
-import 'package:yueh/shell/push_service.dart';
-import 'package:yueh/shell/shell_web.dart';
+import 'package:Amaveth/shell/push_service.dart';
+import 'package:Amaveth/shell/shell_web.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 

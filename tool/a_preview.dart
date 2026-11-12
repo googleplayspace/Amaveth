@@ -1,7 +1,7 @@
 // Separate development entry point; normal main.dart follows DataVerna.
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:yueh/app.dart';
+import 'package:Amaveth/app.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

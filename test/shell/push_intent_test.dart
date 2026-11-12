@@ -1,6 +1,6 @@
 // Baseline: DataVerna 71e141c; project imports and channel adapted.
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yueh/shell/push_intent.dart';
+import 'package:Amaveth/shell/push_intent.dart';
 
 void main() {
   final now = DateTime(2026, 11, 6);

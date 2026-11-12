@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yueh/app.dart';
-import 'package:yueh/core/document_store.dart';
-import 'package:yueh/core/money_book.dart';
-import 'package:yueh/src/workspace.dart';
+import 'package:Amaveth/app.dart';
+import 'package:Amaveth/core/document_store.dart';
+import 'package:Amaveth/core/money_book.dart';
+import 'package:Amaveth/src/workspace.dart';
 
 void main() {
   testWidgets(

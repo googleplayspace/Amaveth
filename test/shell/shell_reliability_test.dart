@@ -1,9 +1,9 @@
 // Baseline: DataVerna 71e141c; project imports and channel adapted.
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yueh/shell/chat_state.dart';
-import 'package:yueh/shell/kernel_policy.dart';
-import 'package:yueh/shell/watchdog.dart';
-import 'package:yueh/shell/network_wake.dart';
+import 'package:Amaveth/shell/chat_state.dart';
+import 'package:Amaveth/shell/kernel_policy.dart';
+import 'package:Amaveth/shell/watchdog.dart';
+import 'package:Amaveth/shell/network_wake.dart';
 
 void main() {
   test('version guidance is strictly below 92, independent of document-start support', () {

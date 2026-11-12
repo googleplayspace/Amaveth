@@ -1,6 +1,6 @@
 // Baseline: DataVerna 71e141c; project imports and channel adapted.
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yueh/shell/signal_gate.dart';
+import 'package:Amaveth/shell/signal_gate.dart';
 
 void main() {
   test('ready foreground is delivered before login', () {

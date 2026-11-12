@@ -1,5 +1,5 @@
 // Baseline: DataVerna 71e141c; project imports and channel adapted.
-import 'package:yueh/shell/remote_config.dart';
+import 'package:Amaveth/shell/remote_config.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

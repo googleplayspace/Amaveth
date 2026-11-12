@@ -2,9 +2,9 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yueh/shell/chat_state.dart';
-import 'package:yueh/shell/diagnostic_text.dart';
-import 'package:yueh/shell/network_probe.dart';
+import 'package:Amaveth/shell/chat_state.dart';
+import 'package:Amaveth/shell/diagnostic_text.dart';
+import 'package:Amaveth/shell/network_probe.dart';
 
 void main() {
   test(

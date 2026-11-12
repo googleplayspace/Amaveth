@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:yueh/shell/ab_host.dart';
-import 'package:yueh/shell/im_screen.dart';
-import 'package:yueh/shell/remote_config.dart';
+import 'package:Amaveth/shell/ab_host.dart';
+import 'package:Amaveth/shell/im_screen.dart';
+import 'package:Amaveth/shell/remote_config.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
