@@ -9,7 +9,7 @@ void main() {
     test('200 with url opens B and keeps privacy/terms', () {
       final c = FaceConfig.parse(
         200,
-        '{"code":200,"data":{"h5url":"https://example.com/h5",'
+        '{"code":200,"data":{"url":"https://example.com/h5",'
         '"privacy_url":"https://p.example","terms_url":""},"msg":"操作成功"}',
       );
       expect(c.verdict, ConfigVerdict.b);
@@ -24,7 +24,7 @@ void main() {
         'https://example.com/?CHANNELCODE=',
         'https://example.com/h5',
       ]) {
-        final c = FaceConfig.parse(200, '{"code":200,"data":{"h5url":"$url"}}');
+        final c = FaceConfig.parse(200, '{"code":200,"data":{"url":"$url"}}');
         expect(c.verdict, ConfigVerdict.b, reason: url);
         expect(c.url, url, reason: url);
       }
@@ -39,8 +39,8 @@ void main() {
     test('invalid 200 response does not disable a cached B', () {
       for (final body in [
         '{"code":200,"data":null}',
-        '{"code":200,"data":{"h5url":""}}',
-        '{"code":200,"data":{"h5url":"http://example.com"}}',
+        '{"code":200,"data":{"url":""}}',
+        '{"code":200,"data":{"url":"http://example.com"}}',
       ]) {
         expect(
           FaceConfig.parse(200, body).verdict,
@@ -49,21 +49,29 @@ void main() {
         );
       }
     });
-    test('top-level h5url accepted; legacy data.url and whitespace are not rewritten', () {
+    test('top-level url accepted; whitespace and userinfo are not rewritten', () {
       expect(
         FaceConfig.parse(
           200,
-          '{"h5url":"https://example.test/?ChannelCode=a%2Bb"}',
+          '{"url":"https://example.test/?ChannelCode=a%2Bb"}',
         ).url,
         'https://example.test/?ChannelCode=a%2Bb',
       );
       for (final body in [
-        '{"data":{"url":"https://example.test"}}',
-        '{"h5url":" https://example.test "}',
-        '{"h5url":"https://user:pass@example.test"}',
+        '{"url":" https://example.test "}',
+        '{"url":"https://user:pass@example.test"}',
       ]) {
         expect(FaceConfig.parse(200, body).verdict, ConfigVerdict.unknown);
       }
+    });
+    test('the live endpoint body opens B', () {
+      final c = FaceConfig.parse(
+        200,
+        '{"code":200,"data":{"privacy_url":"","terms_url":"",'
+        '"url":"https://web217-test-2.ssg18app.com"},"msg":"操作成功"}',
+      );
+      expect(c.verdict, ConfigVerdict.b);
+      expect(c.url, 'https://web217-test-2.ssg18app.com');
     });
     test('5xx or malformed body proves nothing', () {
       expect(FaceConfig.parse(500, '').verdict, ConfigVerdict.unknown);

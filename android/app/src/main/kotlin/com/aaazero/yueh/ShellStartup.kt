@@ -179,8 +179,7 @@ internal object ShellStartup {
     } catch (_: Exception) { false }
     private fun parseUrl(body: String): String? = try {
         val json = JSONObject(body)
-        // Spec names the field, but not its JSON envelope. Both explicit envelopes are
-        // accepted; legacy data.url is deliberately not treated as a new-spec response.
+        // The endpoint answers {"code":200,"data":{"url":...}}; a top-level url is accepted too.
         val value = json.opt("url") ?: json.optJSONObject("data")?.opt("url")
         (value as? String)?.takeIf(::validUrl)
     } catch (_: Exception) { null }

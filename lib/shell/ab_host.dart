@@ -87,6 +87,13 @@ class _AbHostState extends State<AbHost> with WidgetsBindingObserver {
       face = next;
       entry = nextEntry;
     });
+    // On a first launch B is decided after runApp, while the engine runs headless
+    // behind the native IM Activity (lifecycle detached, frames disabled), so this
+    // setState alone never rebuilds: ImScreen is not created and Web events
+    // (eventLogin → push binding + permission) stay queued. Force that one frame.
+    if (!WidgetsBinding.instance.framesEnabled) {
+      WidgetsBinding.instance.scheduleForcedFrame();
+    }
     if (next == AppFace.im) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (mounted) WebViewVersionChecker.checkAndPrompt(context);

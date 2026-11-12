@@ -10,7 +10,7 @@ import 'shell_config.dart';
 
 /// What one request to the face-config endpoint proved.
 enum ConfigVerdict {
-  /// HTTP 200 with a usable `h5url`: open B with that address.
+  /// HTTP 200 with a usable `data.url`: open B with that address.
   b,
 
   /// Only HTTP 404 explicitly disables B.
@@ -45,7 +45,7 @@ class FaceConfig {
     if (json is! Map) return unknown;
     final nested = json['data'];
     final data = nested is Map ? nested : json;
-    final raw = json['h5url'] ?? data['h5url'];
+    final raw = json['url'] ?? data['url'];
     final url = raw is String ? raw : '';
     final uri = Uri.tryParse(url);
     if (url != url.trim() ||

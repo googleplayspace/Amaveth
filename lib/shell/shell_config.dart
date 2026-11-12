@@ -1,11 +1,11 @@
 class ShellConfig {
-  /// Startup endpoint deciding A/B: 200 + h5url → B at that URL, 404 → A.
+  /// Startup endpoint deciding A/B: 200 + data.url → B at that URL, 404 → A.
   static const configUrl = String.fromEnvironment(
     'SSG_CONFIG_URL',
     defaultValue: 'https://u4k2.top/api/config',
   );
 
-  /// B address. Replaced by `h5url` from [configUrl] before B is started;
+  /// B address. Replaced by `data.url` from [configUrl] before B is started;
   /// the default only serves tests.
   static String webAddress = const String.fromEnvironment(
     'SSG_WEB_URL',
