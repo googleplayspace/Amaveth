@@ -1,6 +1,14 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Spec 9.4: white status / navigation bars with dark icons, also in dark mode.
+         The SplashScreen library re-applies these after the splash exits, so they must be
+         white here as well as in ImActivity. -->
     <style name="ImShellTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
     </style>
 
     <!-- Spec 8.4 (2) / 9.6: system SplashScreen for the launcher entry. White matches the
@@ -10,5 +18,9 @@
         <item name="windowSplashScreenBackground">@android:color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/shell_splash_art</item>
         <item name="postSplashScreenTheme">@style/ImShellTheme</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="27">true</item>
     </style>
 </resources>

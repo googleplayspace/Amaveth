@@ -9,8 +9,10 @@ import io.flutter.plugin.common.MethodChannel
 
 /** Native cached load precedes Flutter and all SDK initialization (§9.6). */
 class ShellApplication : Application() {
+    companion object { lateinit var instance: ShellApplication; private set }
     override fun onCreate() {
         super.onCreate()
+        instance = this
         ShellStartup.start(this)
     }
 }

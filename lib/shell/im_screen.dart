@@ -443,6 +443,7 @@ class _ImScreenState extends State<ImScreen> with WidgetsBindingObserver {
     if (disposed ||
         deliveringPush ||
         !signals.canProbe ||
+        !signals.authenticated ||
         push.uid == null ||
         web == null) {
       return;
@@ -460,10 +461,14 @@ class _ImScreenState extends State<ImScreen> with WidgetsBindingObserver {
           web != controller ||
           generation != document ||
           !signals.canProbe ||
+          !signals.authenticated ||
           push.uid == null) {
         return;
       }
-      while (push.intents.isNotEmpty && signals.canProbe && push.uid != null) {
+      while (push.intents.isNotEmpty &&
+          signals.canProbe &&
+          signals.authenticated &&
+          push.uid != null) {
         final intent = push.intents.take(push.uid!, DateTime.now());
         if (intent == null) break;
         // Consume before invoking: never replay a notification after reload/error.

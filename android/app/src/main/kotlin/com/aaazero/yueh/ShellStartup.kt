@@ -113,6 +113,8 @@ internal object ShellStartup {
         log("mock.response status=$status")
         if (status == 404) {
             url = null; face = "a"; reason = "http404"
+            prefs.edit().putBoolean("push.disabled", true).apply()
+            ShellRuntime.bridge?.stopMonitoring()
             ImWebViewHolder.forget(app)
             app.getSharedPreferences("FlutterSharedPreferences", Context.MODE_PRIVATE).edit()
                 .remove("flutter.remoteConfig.url").apply()
@@ -123,6 +125,7 @@ internal object ShellStartup {
         if (next != null) {
             val changed = url != next || face != "b"
             url = next; face = "b"; reason = "http200"
+            prefs.edit().putBoolean("push.disabled", false).apply()
             if (changed) {
                 prepare(next)
                 ImWebViewHolder.open(app)

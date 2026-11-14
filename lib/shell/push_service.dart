@@ -29,6 +29,13 @@ class ShellPush extends ChangeNotifier {
   bool _bindingFailed = false, _badgePending = false;
   int _bindingInFlight = 0;
   bool _logoutPending = false;
+  bool businessEnabled = true;
+
+  void setBusinessEnabled(bool value) {
+    businessEnabled = value;
+    if (!value) unawaited(logout());
+  }
+
   String? notificationFailure;
 
   /// Spec 5.4 (Android): the badge mirrors Web's unread total. iOS is unchanged for now.
@@ -37,7 +44,7 @@ class ShellPush extends ChangeNotifier {
   bool get _countBadge => countBadgeOverride ?? Platform.isAndroid;
 
   void _scheduleRetry() {
-    if (_retryTimer != null || !chats.visible) return;
+    if (_retryTimer != null || (!chats.visible && !_logoutPending)) return;
     final seconds = [5, 15, 30, 60, 300][_retryAttempt.clamp(0, 4)];
     _retryAttempt++;
     _retryTimer = Timer(Duration(seconds: seconds), () {
@@ -47,7 +54,7 @@ class ShellPush extends ChangeNotifier {
   }
 
   Future<void> retryPending() async {
-    if (!chats.visible) return;
+    if (!chats.visible && !_logoutPending) return;
     if (!initialized) await initialize();
     if (initialized && _logoutPending) await _retryLogout();
     final wanted = _desiredUid;
@@ -84,6 +91,7 @@ class ShellPush extends ChangeNotifier {
       await OneSignal.initialize(appId);
       await OneSignal.InAppMessages.paused(true);
       OneSignal.Notifications.addClickListener((event) {
+        if (!businessEnabled) return;
         final intent = ChatPushIntent.parse(
           event.notification.notificationId,
           event.notification.additionalData,
@@ -95,7 +103,8 @@ class ShellPush extends ChangeNotifier {
         notifyListeners();
       });
       OneSignal.Notifications.addForegroundWillDisplayListener((event) {
-        if (chats.suppress(event.notification.additionalData)) {
+        if (!businessEnabled ||
+            chats.suppress(event.notification.additionalData)) {
           event.preventDefault();
         }
         foregroundMessage++;
@@ -116,6 +125,7 @@ class ShellPush extends ChangeNotifier {
       });
       OneSignal.User.pushSubscription.addObserver((_) => _updateStatus());
       initialized = true;
+      if (!businessEnabled || _logoutPending) await _retryLogout();
       _updateStatus();
     } catch (_) {
       status = 'Could not initialize notifications. Retrying automatically.';
@@ -220,6 +230,7 @@ class ShellPush extends ChangeNotifier {
   }
 
   Future<void> login(String nextUid, {required bool visible}) {
+    if (!businessEnabled) return Future.value();
     if (nextUid.isEmpty) return Future.value();
     _logoutPending = false;
     _desiredUid = nextUid;

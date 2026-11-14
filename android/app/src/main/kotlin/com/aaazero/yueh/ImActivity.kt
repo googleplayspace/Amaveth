@@ -80,19 +80,11 @@ class ImActivity : ComponentActivity() {
             splash.setKeepOnScreenCondition {
                 !::cover.isInitialized && SystemClock.elapsedRealtime() - shownAt < SPLASH_LIMIT_MS
             }
-            splash.setOnExitAnimationListener { it.remove() }
+            splash.setOnExitAnimationListener { it.remove(); applyWhiteSystemBars() }
         }
         window.decorView.setBackgroundColor(Color.WHITE)
         WindowCompat.setDecorFitsSystemWindows(window, false)
-        // Without this flag the legacy theme forces black bars over our white root (spec 9.4).
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = Color.TRANSPARENT
-        window.navigationBarColor = Color.TRANSPARENT
-        if (Build.VERSION.SDK_INT >= 29) window.isNavigationBarContrastEnforced = false
-        WindowInsetsControllerCompat(window, window.decorView).apply {
-            isAppearanceLightStatusBars = true
-            isAppearanceLightNavigationBars = true
-        }
+        applyWhiteSystemBars()
         setContentView(buildLayout())
         onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() = goBack()
@@ -225,10 +217,30 @@ class ImActivity : ComponentActivity() {
         }
     }
 
+    /**
+     * Spec 9.4: white status and navigation bars with dark icons, on every page and in dark
+     * mode. The SplashScreen library re-applies the post-splash theme's bar colors when the
+     * splash exits, so ImShellTheme carries the same values and this runs again afterwards.
+     */
+    private fun applyWhiteSystemBars() {
+        // Without this flag the legacy theme forces black bars over our white root.
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        @Suppress("DEPRECATION")
+        window.statusBarColor = Color.WHITE
+        @Suppress("DEPRECATION")
+        window.navigationBarColor = Color.WHITE
+        if (Build.VERSION.SDK_INT >= 29) window.isNavigationBarContrastEnforced = false
+        WindowInsetsControllerCompat(window, window.decorView).apply {
+            isAppearanceLightStatusBars = true
+            isAppearanceLightNavigationBars = true
+        }
+    }
+
     override fun onResume() {
         super.onResume()
         resumed = true
         if (ShellStartup.isA) { showA(); return }
+        applyWhiteSystemBars()
         if (ImWebViewHolder.host === this) {
             ImWebViewHolder.current()?.onResume()
             ImWebViewHolder.event("visible", mapOf("value" to true))

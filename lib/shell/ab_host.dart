@@ -79,6 +79,7 @@ class _AbHostState extends State<AbHost> with WidgetsBindingObserver {
 
   void apply(FaceConfig config) {
     if (!mounted || config.verdict == ConfigVerdict.unknown) return;
+    ShellPush.instance.setBusinessEnabled(config.verdict == ConfigVerdict.b);
     final next = config.verdict == ConfigVerdict.b ? AppFace.im : AppFace.tool;
     final nextEntry = next == AppFace.im ? config.url : null;
     if (next == face && nextEntry == entry) return;

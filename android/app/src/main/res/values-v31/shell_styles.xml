@@ -6,5 +6,10 @@
         <item name="android:windowSplashScreenBackground">@android:color/white</item>
         <item name="android:windowSplashScreenAnimatedIcon">@drawable/shell_splash_art</item>
         <item name="postSplashScreenTheme">@style/ImShellTheme</item>
+        <!-- Spec 9.4: white bars with dark icons from the first frame. -->
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowLightNavigationBar">true</item>
     </style>
 </resources>

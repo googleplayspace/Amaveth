@@ -80,6 +80,11 @@ class ShellBridge(private val app: Context, messenger: io.flutter.plugin.common.
         const val TICK_MS = 1000L
         const val HEARTBEAT_TICKS = 20
     }
+    /** §2.3: switching to A stops the native heartbeat (§11.1) and alive watch (§11.2). */
+    fun stopMonitoring() {
+        running = false
+        handler.removeCallbacks(ticker)
+    }
     private fun network(): String {
         val cm = app.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val caps = cm.getNetworkCapabilities(cm.activeNetwork) ?: return "none"
