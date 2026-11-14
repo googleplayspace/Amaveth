@@ -85,6 +85,12 @@ android {
             // Isolated native acceptance target; never changes an installed user app.
             if (providers.gradleProperty("shellReview").orNull == "true") applicationIdSuffix = ".startupcheck"
             signingConfig = signingConfigs.getByName("release")
+            // Obfuscate and shrink the release bytecode with R8 (explicit so it can't be
+            // turned off by a default change). Keep rules live in shell-rules.pro plus
+            // Flutter's default proguard-android-optimize.txt, which keeps @JavascriptInterface
+            // so the JS bridge survives (spec 8.4).
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles("shell-rules.pro")
             if (providers.gradleProperty("shellReview").orNull == "true") proguardFiles("shell-acceptance-rules.pro")
         }
