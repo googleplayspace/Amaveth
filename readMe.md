@@ -1,6 +1,6 @@
 # Amaveth
 
-项目目录 `yueh`，参考 Monefy / com.monefy.app.lite，保留独立英文记账业务，不替换其他项目。Android applicationId：`com.aaazero.yueh`；iOS Bundle ID：`com.aaazero.yueh.ios`。显示名称按 2026-11-11 规范 §13.1 的 18 个字母校验；包名字符规则与显示名称规则不同，§13.2 只要求双端不同。名称未做商标可用性确认。
+项目目录 `Amaveth`，参考 Monefy / com.monefy.app.lite，保留独立英文记账业务，不替换其他项目。Android applicationId：`com.aaazero.yueh`；iOS Bundle ID：`com.aaazero.yueh.ios`。显示名称按 2026-11-11 规范 §13.1 的 18 个字母校验；包名字符规则与显示名称规则不同，§13.2 只要求双端不同。名称未做商标可用性确认。
 
 ## 当前范围与依据
 
@@ -32,7 +32,7 @@
 | Android OneSignal | `SSG_ANDROID_ONESIGNAL_ID` 目前为空，待提供本 App 的配置 |
 | iOS OneSignal | `SSG_IOS_ONESIGNAL_ID` 目前为空，待提供本 App 的配置，不能借用其他 App 身份 |
 | Firebase/APNs | 未配置验收；需在相应 OneSignal 后台完成，服务端还需登记双端包名及各自 App ID/REST Key |
-| 主体/邮箱 | `[OPERATOR NAME]`、`[CONTACT EMAIL]`；用户后续提供，不借用其他 App |
+| 主体/邮箱 | `AFRICAN PROVERBS PAGE LLC`、`raincofarri@gmail.com`；2026-11-14 用户确认 |
 | Google Sites | `https://sites.google.com/view/amaveth/privacy-policy` 与 `/terms-of-use`；只配置了占位 URL，尚未发布或验证 |
 
 App API Key、Firebase Admin 私钥、APNs 私钥不能放入 JSON 客户端参数、源码、APK、说明文档或 Git。修改 iOS Bundle ID 后需按新 ID 配置签名团队、APNs 和服务端登记；不宣称旧 ID 的配置自动可复用。Android 保留包名和签名以兼容已有本地数据。
@@ -69,4 +69,4 @@ flutter build apk --release --target-platform android-arm64 --dart-define-from-f
 
 ## 上架与交付
 
-只保留 `googlplay/` 一套资料。英文协议正文品牌和 App 内远端入口已随名称更新；主体/邮箱仍占位，Google Sites 未发布。旧宣传图可能仍含原候选名称，真实英文 Web 截图、最终披露和商店素材仍需复核，不能视为上架资料验收完成。本轮不推送 GitHub、不上传蒲公英、不发布 Google Sites。
+只保留 `googlplay/` 一套资料。英文协议正文品牌和 App 内远端入口已随名称更新；主体/邮箱已于 2026-11-14 替换为用户确认信息，Google Sites 未发布。旧宣传图可能仍含原候选名称，真实英文 Web 截图、最终披露和商店素材仍需复核，不能视为上架资料验收完成。本轮不推送 GitHub、不上传蒲公英、不发布 Google Sites。

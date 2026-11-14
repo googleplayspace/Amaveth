@@ -1004,11 +1004,11 @@ class _WorkspaceState extends State<ToolWorkspace> {
       ),
       const ListTile(
         title: Text('Support'),
-        subtitle: SelectableText('[CONTACT EMAIL]'),
+        subtitle: SelectableText('raincofarri@gmail.com'),
       ),
       const ListTile(
         title: Text('Operator'),
-        subtitle: Text('[OPERATOR NAME]'),
+        subtitle: Text('AFRICAN PROVERBS PAGE LLC'),
       ),
       const ListTile(title: Text('About'), subtitle: Text('$brand · 1.0.1')),
       ListTile(
